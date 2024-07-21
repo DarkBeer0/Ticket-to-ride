@@ -89,15 +89,17 @@ Basic Authentication is required.
 `POST /api/tickets/buy`
 
 ## Example use 
-```bash curl -X POST "http://localhost:8080/api/tickets/buy" -H "Content-Type: application/json" -u user:password -d 
-'{
+```bash 
+curl -X POST "http://localhost:8080/api/tickets/buy" -H "Content-Type: application/json" -u user:password -d 
+```json
+{
   "departure": "London",
   "arrival": "Bristol",
   "segments": 7,
   "price": 25,
   "travellerAmount": 30,
   "traveller": "John Doe"
-}'
+}
 
 
 
