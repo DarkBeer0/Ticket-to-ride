@@ -80,7 +80,7 @@
     "price": 25,
     "travellerAmount": 30,
     "traveller": "John Doe"
-}
+    }
   
 ## Authentication
 Basic Authentication is required.
