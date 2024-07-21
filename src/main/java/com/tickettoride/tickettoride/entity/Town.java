@@ -2,6 +2,9 @@ package com.tickettoride.tickettoride.entity;
 
 import jakarta.persistence.*;
 
+/**
+ * Entity representing a town.
+ */
 @Entity
 @Table(name = "towns")
 public class Town {

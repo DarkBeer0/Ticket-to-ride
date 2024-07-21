@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Service class for managing routes between towns.
+ */
 @Service
 public class RouteService {
     @Autowired
@@ -16,6 +19,13 @@ public class RouteService {
     @Autowired
     private PathFinderService pathFinderService;
 
+    /**
+     * Finds a route between two towns.
+     *
+     * @param start the starting town
+     * @param end   the destination town
+     * @return a map containing route information
+     */
     public Map<String, Object> findRoute(Town start, Town end) {
         Map<String, Object> routeInfo = routeRepository.findByStartTownAndEndTown(start, end);
         if (routeInfo == null) {

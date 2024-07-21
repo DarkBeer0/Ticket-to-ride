@@ -2,6 +2,9 @@ package com.tickettoride.tickettoride.entity;
 
 import jakarta.persistence.*;
 
+/**
+ * Entity representing a segment between two cities.
+ */
 @Entity
 @Table(name = "segments")
 public class Segment {

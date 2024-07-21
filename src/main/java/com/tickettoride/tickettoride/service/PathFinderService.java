@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+/**
+ * Service class for finding the shortest path between towns using Dijkstra's algorithm.
+ */
 @Service
 public class PathFinderService {
     private Map<String, List<Edge>> adjList = new HashMap<>();
@@ -15,6 +18,9 @@ public class PathFinderService {
     @Autowired
     private SegmentRepository segmentRepository;
 
+    /**
+     * Initializes the adjacency list from the segments stored in the repository.
+     */
     @PostConstruct
     public void init() {
         List<Segment> segments = segmentRepository.findAll();
@@ -22,6 +28,14 @@ public class PathFinderService {
             addEdge(segment.getFromCity(), segment.getToCity(), segment.getDistance());
         }
     }
+
+    /**
+     * Adds an edge to the adjacency list.
+     *
+     * @param from   the starting city
+     * @param to     the destination city
+     * @param weight the weight of the edge
+     */
     public void addEdge(String from, String to, int weight) {
         adjList.putIfAbsent(from, new ArrayList<>());
         adjList.putIfAbsent(to, new ArrayList<>());
@@ -29,6 +43,13 @@ public class PathFinderService {
         adjList.get(to).add(new Edge(from, weight));
     }
 
+    /**
+     * Finds the shortest path between two cities using Dijkstra's algorithm.
+     *
+     * @param start the starting city
+     * @param end   the destination city
+     * @return the distance of the shortest path
+     */
     public int dijkstra(String start, String end) {
         PriorityQueue<Edge> pq = new PriorityQueue<>(Comparator.comparingInt(e -> e.weight));
         Map<String, Integer> distances = new HashMap<>();
@@ -57,6 +78,9 @@ public class PathFinderService {
         return distances.get(end);
     }
 
+    /**
+     * Inner class representing an edge in the graph.
+     */
     static class Edge {
         String to;
         int weight;

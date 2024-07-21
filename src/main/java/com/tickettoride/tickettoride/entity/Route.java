@@ -2,6 +2,9 @@ package com.tickettoride.tickettoride.entity;
 
 import jakarta.persistence.*;
 
+/**
+ * Entity representing a route between two towns.
+ */
 @Entity
 @Table(name = "routes")
 public class Route {

@@ -3,6 +3,9 @@ package com.tickettoride.tickettoride.entity;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 
+/**
+ * Entity representing a traveller.
+ */
 @Entity
 @Table(name = "travellers")
 public class Traveller {

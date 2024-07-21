@@ -10,10 +10,20 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Security configuration for the application.
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
+    /**
+     * Configures the security filter chain.
+     *
+     * @param http the HTTP security configuration.
+     * @return the security filter chain.
+     * @throws Exception if an error occurs during configuration.
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -29,6 +39,11 @@ public class SecurityConfig {
         return http.build();
     }
 
+    /**
+     * Configures the in-memory user details service.
+     *
+     * @return the user details service.
+     */
     @Bean
     public UserDetailsService userDetailsService() {
         var userDetailsManager = new InMemoryUserDetailsManager();

@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Entity representing a ticket purchased by a traveller.
+ */
 @Entity
 @Table(name = "tickets")
 public class Ticket {
