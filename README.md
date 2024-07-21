@@ -65,3 +65,27 @@
       "price": 25,
       "currency": "GBP"
   }
+
+## Buy Ticket
+
+- **URL:** `/api/tickets/buy`
+- **Method:** `POST`
+- `Content-Type: application/json`
+- **Response:**
+  ```json
+  {
+    "departure": "London",
+    "arrival": "Bristol",
+    "segments": 7,
+    "price": 25,
+    "travellerAmount": 30,
+    "traveller": "John Doe"
+}
+  
+## Authentication
+Basic Authentication is required.
+- **Username:** `user`
+- **Password:** `password`
+`POST /api/tickets/buy`
+
+
