@@ -91,6 +91,7 @@ Basic Authentication is required.
 ## Example use 
 ```bash 
 curl -X POST "http://localhost:8080/api/tickets/buy" -H "Content-Type: application/json" -u user:password -d 
+```
 ```json
 {
   "departure": "London",
@@ -100,6 +101,3 @@ curl -X POST "http://localhost:8080/api/tickets/buy" -H "Content-Type: applicati
   "travellerAmount": 30,
   "traveller": "John Doe"
 }
-
-
-
