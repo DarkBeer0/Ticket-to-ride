@@ -12,7 +12,7 @@
  Target Server Version : 160003 (160003)
  File Encoding         : 65001
 
- Date: 21/07/2024 20:12:11
+ Date: 26/07/2024 09:14:05
 */
 
 
@@ -187,14 +187,15 @@ CREATE TABLE "public"."travellers" (
   "id" int8 NOT NULL DEFAULT nextval('travellers_id_seq'::regclass),
   "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
   "email" varchar(255) COLLATE "pg_catalog"."default" NOT NULL,
-  "balance" numeric(38,2) NOT NULL
+  "balance" numeric(38,2) NOT NULL,
+  "password" varchar(255) COLLATE "pg_catalog"."default" NOT NULL
 )
 ;
 
 -- ----------------------------
 -- Records of travellers
 -- ----------------------------
-INSERT INTO "public"."travellers" VALUES (1, 'John Doe', 'johndoe@example.com', 3.00);
+INSERT INTO "public"."travellers" VALUES (1, 'John Doe', 'johndoe@example.com', 3.00, '$2a$10$D9qIYgOg2uJdKX/E4hIzLujExmfnZ24cF1V5lXt.6GV/BjI4kbb2K');
 
 -- ----------------------------
 -- Alter sequences owned by

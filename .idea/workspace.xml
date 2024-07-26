@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="855f1dc9-c7b0-4456-bfaa-79e24b565672" name="Changes" comment="wipe pas">
+    <list default="true" id="855f1dc9-c7b0-4456-bfaa-79e24b565672" name="Changes" comment="JavaDocs">
+      <change afterPath="$PROJECT_DIR$/db/public.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/dto/RegisterTravellerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/CustomUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/controller/TravellerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/controller/TravellerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Segment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Segment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Town.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Traveller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/entity/Traveller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/PathFinderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/PathFinderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/RouteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/RouteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/TicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/TownService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/TownService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/repository/TravellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/repository/TravellerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/TravellerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tickettoride/tickettoride/service/TravellerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/controller/TravellerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/controller/TravellerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/service/PathFinderService$Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/service/PathFinderService$Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/service/PathFinderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/service/PathFinderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/service/RouteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/service/RouteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/service/TicketService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tickettoride/tickettoride/service/TicketService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,15 +59,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Java/ticket to ride"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java/ticket to ride&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java\ticket to ride\db" />
       <recent name="D:\Java\tickettoride\db" />
     </key>
   </component>

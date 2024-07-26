@@ -1,10 +1,13 @@
 package com.tickettoride.tickettoride.service;
 
+import com.tickettoride.tickettoride.dto.RegisterTravellerDto;
 import com.tickettoride.tickettoride.entity.Traveller;
 import com.tickettoride.tickettoride.repository.TravellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -15,44 +18,36 @@ public class TravellerService {
     @Autowired
     private TravellerRepository travellerRepository;
 
-    /**
-     * Retrieves all travellers.
-     *
-     * @return a list of all travellers
-     */
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     public List<Traveller> getAllTravellers() {
         return travellerRepository.findAll();
     }
 
-    /**
-     * Saves a traveller.
-     *
-     * @param traveller the traveller to save
-     * @return the saved traveller
-     */
     public Traveller saveTraveller(Traveller traveller) {
+        traveller.setPassword(passwordEncoder.encode(traveller.getPassword()));
         return travellerRepository.save(traveller);
     }
 
-    /**
-     * Finds a traveller by its ID.
-     *
-     * @param id the ID of the traveller
-     * @return the found traveller
-     * @throws RuntimeException if the traveller is not found
-     */
+    public Traveller registerTraveller(RegisterTravellerDto registerTravellerDto) {
+        Traveller traveller = new Traveller();
+        traveller.setName(registerTravellerDto.getName());
+        traveller.setEmail(registerTravellerDto.getEmail());
+        traveller.setPassword(passwordEncoder.encode(registerTravellerDto.getPassword()));
+        traveller.setBalance(BigDecimal.ZERO);
+        return travellerRepository.save(traveller);
+    }
+
     public Traveller findById(Long id) {
         return travellerRepository.findById(id).orElseThrow(() -> new RuntimeException("Traveller not found"));
     }
 
-    /**
-     * Finds a traveller by its name.
-     *
-     * @param name the name of the traveller
-     * @return the found traveller
-     * @throws RuntimeException if the traveller is not found
-     */
     public Traveller findByName(String name) {
         return travellerRepository.findByName(name).orElseThrow(() -> new RuntimeException("Traveller not found"));
+    }
+
+    public Traveller findByEmail(String email) {
+        return travellerRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("Traveller not found"));
     }
 }

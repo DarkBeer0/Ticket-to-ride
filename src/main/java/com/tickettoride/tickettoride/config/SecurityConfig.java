@@ -1,14 +1,17 @@
 package com.tickettoride.tickettoride.config;
 
+import com.tickettoride.tickettoride.service.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.authentication.AuthenticationProvider;
 
 /**
  * Security configuration for the application.
@@ -40,22 +43,38 @@ public class SecurityConfig {
     }
 
     /**
-     * Configures the in-memory user details service.
+     * Configures the custom user details service.
      *
+     * @param customUserDetailsService the custom user details service.
      * @return the user details service.
      */
     @Bean
-    public UserDetailsService userDetailsService() {
-        var userDetailsManager = new InMemoryUserDetailsManager();
+    public UserDetailsService userDetailsService(CustomUserDetailsService customUserDetailsService) {
+        return customUserDetailsService;
+    }
 
-        var user = User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("password")
-                .roles("USER")
-                .build();
+    /**
+     * Configures the password encoder.
+     *
+     * @return the password encoder.
+     */
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
-        userDetailsManager.createUser(user);
-
-        return userDetailsManager;
+    /**
+     * Configures the authentication provider.
+     *
+     * @param userDetailsService the custom user details service.
+     * @param passwordEncoder the password encoder.
+     * @return the authentication provider.
+     */
+    @Bean
+    public AuthenticationProvider authenticationProvider(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService);
+        authProvider.setPasswordEncoder(passwordEncoder);
+        return authProvider;
     }
 }

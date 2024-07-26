@@ -19,6 +19,9 @@ public class Traveller {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
+    private String password;
+
     @Column(nullable = false, precision = 38, scale = 2)
     private BigDecimal balance;
 
@@ -52,5 +55,13 @@ public class Traveller {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
